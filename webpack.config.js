@@ -31,6 +31,12 @@ glob
   });
 
 module.exports = [
+  // {
+  //   devServer: {
+  //     static: "dist",
+  //     open: true,
+  //   },
+  // },
   {
     entry: entriesJS,
     output: {
@@ -52,6 +58,10 @@ module.exports = [
       }),
     ],
     devtool: "source-map",
+    devServer: {
+      static: "dist",
+      open: true,
+    },
   },
 
   {
