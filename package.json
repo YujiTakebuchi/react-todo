@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=production",
-    "start": "webpack watch --mode=development & npm run server",
+    "build": "webpack",
+    "start": "webpack watch & npm run server",
     "server": "browser-sync start --config bs-config.js"
   },
   "keywords": [],
