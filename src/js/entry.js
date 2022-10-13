@@ -1,6 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
-// import data from "../data/recipes.json";
+import { createRoot } from "react-dom/client";
 import Menu from "./components/Menu";
 
 const data = [
@@ -40,4 +39,6 @@ const data = [
   },
 ];
 
-render(<Menu recipes={data} />, document.getElementById("root"));
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<Menu recipes={data} />);
