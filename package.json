@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=production",
-    "start": "webpack watch --mode=development & npm run server",
+    "build": "webpack",
+    "start": "webpack watch & npm run server",
     "server": "browser-sync start --config bs-config.js"
   },
   "keywords": [],
@@ -18,6 +18,7 @@
     "react-icons": "^4.4.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
     "@babel/preset-react": "^7.18.6",
     "autoprefixer": "^10.4.12",
