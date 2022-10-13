@@ -1,0 +1,10 @@
+body {
+  background-color: red;
+  #root {
+    background-color: blue;
+    display: flex;
+    input {
+      appearance: none;
+    }
+  }
+}
