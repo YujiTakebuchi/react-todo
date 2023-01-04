@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { glob } = require("glob");
+const CopyFilePlugin = require("copy-webpack-plugin");
 
 const mode = "development";
 const isDevMode = mode === "development";
@@ -103,6 +104,38 @@ module.exports = [
             new MiniCssExtractPlugin({
                 filename: "style.css",
             }),
+            new CopyFilePlugin(
+                {
+                    patterns: [
+                        {
+                            context: "src",
+                            from: "**/*.png",
+                            to: path.resolve(__dirname, "dist/"),
+                        },
+                        {
+                            context: "src",
+                            from: "**/*.jpg",
+                            to: path.resolve(__dirname, "dist/"),
+                        },
+                        {
+                            context: "src",
+                            from: "**/*.svg",
+                            to: path.resolve(__dirname, "dist/"),
+                        },
+                        {
+                            context: "src",
+                            from: "**/*.mp4",
+                            to: path.resolve(__dirname, "dist/"),
+                        },
+                        {
+                            context: "src",
+                            from: "**/*.json",
+                            to: path.resolve(__dirname, "dist/")
+                        }
+                    ]
+                },
+                { copyUnmodified: true }
+            ),
         ],
         target: ["web", "es5"],
         devtool: "source-map",
